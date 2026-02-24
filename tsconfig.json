@@ -32,7 +32,7 @@
     // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": false,
-    "strictPropertyInitialization":  true,
+    "strictPropertyInitialization":  false,
 
     // Style Options
     // "noImplicitReturns": true,
