@@ -19,6 +19,10 @@
     },
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
+    "typeRoots": [
+      "node_modules/@types",
+      "src/@types"
+    ],
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],
