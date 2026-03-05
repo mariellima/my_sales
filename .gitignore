@@ -7,3 +7,6 @@ coverage
 .idea/
 .vscode/
 temp/
+
+uploads/*
+!uploads/.gitkeep
