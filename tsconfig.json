@@ -38,6 +38,7 @@
     "exactOptionalPropertyTypes": false,
     "strictPropertyInitialization":  false,
 
+
     // Style Options
     // "noImplicitReturns": true,
     // "noImplicitOverride": true,
@@ -47,7 +48,7 @@
     // "noPropertyAccessFromIndexSignature": true,
 
     // Recommended Options
-    "strict": true,
+    "strict": false,
     "jsx": "react-jsx",
     "verbatimModuleSyntax": false,
     "isolatedModules": true,

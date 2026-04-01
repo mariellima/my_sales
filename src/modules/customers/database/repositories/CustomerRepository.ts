@@ -9,7 +9,7 @@ export const customerRepository = AppDataSource.getRepository(
     return customer;
   },
 
-  async findbyId(id: number): Promise<Customer | null> {
+  async findById(id: number): Promise<Customer | null> {
     const customer = await this.findOneBy({ id });
     return customer;
   },
