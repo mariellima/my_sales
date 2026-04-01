@@ -46,11 +46,7 @@ export class CreateOrderService {
     });
 
     if (quantityAvailable.length) {
-      throw new AppError(
-        `The quantity ${quantityAvailable[0].quantity}
-        is not available for ${quantityAvailable[0].id}.`,
-        409,
-      );
+      throw new AppError(`The quantity is not available for.`, 409);
     }
 
     const serializedProducts = products.map((product) => ({
