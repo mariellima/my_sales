@@ -1,7 +1,7 @@
 import { compare, hash } from "bcrypt";
 import AppError from "@shared/errors/AppError";
-import { UserTokensRepositories } from "../database/repositories/UserTokensRepositories";
-import { usersRepositories } from "../database/repositories/UsersRepositories";
+import { UserTokensRepositories } from "../infra/database/repositories/UserTokensRepositories";
+import { usersRepositories } from "../infra/database/repositories/UsersRepositories";
 import { isAfter, addHours } from "date-fns";
 
 interface IResetPassword {

@@ -1,6 +1,6 @@
 import AppError from "@shared/errors/AppError";
-import { User } from "../database/entities/User";
-import { usersRepositories } from "../database/repositories/UsersRepositories";
+import { User } from "../infra/database/entities/User";
+import { usersRepositories } from "../infra/database/repositories/UsersRepositories";
 import { compare } from "bcrypt";
 import { sign, Secret } from "jsonwebtoken";
 import "dotenv/config";
@@ -31,12 +31,12 @@ export default class SessionUserService {
 
     const token = sign({}, process.env.APP_SECRET as Secret, {
       subject: String(user.id),
-      expiresIn: '1d'
+      expiresIn: "1d",
     });
 
     return {
       user,
-      token
-    }
+      token,
+    };
   }
 }

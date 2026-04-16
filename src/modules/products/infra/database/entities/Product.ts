@@ -1,4 +1,4 @@
-import { OrdersProducts } from "@modules/orders/database/entities/OrdersProducts";
+import { OrdersProducts } from "@modules/orders/infra/database/entities/OrdersProducts";
 import {
   Column,
   CreateDateColumn,
