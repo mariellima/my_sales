@@ -1,4 +1,4 @@
-import { Customer } from "@modules/customers/database/entities/Customer";
+import { Customer } from "@modules/customers/infra/database/entities/Customer";
 import {
   CreateDateColumn,
   Entity,

@@ -1,5 +1,5 @@
-import { Customer } from "@modules/customers/database/entities/Customer";
-import { AppDataSource } from "@shared/typeorm/data-source";
+import { Customer } from "@modules/customers/infra/database/entities/Customer";
+import { AppDataSource } from "@shared/infra/typeorm/data-source";
 import { Order } from "../entities/Order";
 import { OrdersProducts } from "../entities/OrdersProducts";
 

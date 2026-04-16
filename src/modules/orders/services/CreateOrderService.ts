@@ -1,4 +1,4 @@
-import { customerRepository } from "@modules/customers/database/repositories/CustomerRepository";
+import { customerRepository } from "@modules/customers/infra/database/repositories/CustomerRepository";
 import { Product } from "@modules/products/database/entities/Product";
 import { productsRepositories } from "@modules/products/database/repositories/ProductsRepositories";
 import AppError from "@shared/errors/AppError";
