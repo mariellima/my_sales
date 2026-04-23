@@ -1,9 +1,9 @@
-import { customerRepository } from "@modules/customers/infra/database/repositories/CustomerRepository";
 import { Product } from "@modules/products/infra/database/entities/Product";
 import { productsRepositories } from "@modules/products/infra/database/repositories/ProductsRepositories";
 import AppError from "@shared/errors/AppError";
 import { orderRepositories } from "../infra/database/repositories/OrderRepositories";
 import { Order } from "../infra/database/entities/Order";
+import { ICustomersRepository } from "@modules/customers/domain/repositories/ICustomersRepositories";
 
 interface ICreateOrder {
   customer_id: string;
@@ -11,8 +11,9 @@ interface ICreateOrder {
 }
 
 export class CreateOrderService {
+  constructor(private readonly orderRepositories: ICustomersRepository) {}
   async execute({ customer_id, products }: ICreateOrder): Promise<Order> {
-    const customerExists = await customerRepository.findById(
+    const customerExists = await this.orderRepositories.findById(
       Number(customer_id),
     );
 

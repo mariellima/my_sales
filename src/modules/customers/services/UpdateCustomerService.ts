@@ -1,6 +1,7 @@
 import AppError from "@shared/errors/AppError";
 import { Customer } from "../infra/database/entities/Customer";
-import { customerRepository } from "../infra/database/repositories/CustomerRepository";
+import { ICustomersRepository } from "../domain/repositories/ICustomersRepositories";
+import { inject, injectable } from "tsyringe";
 
 interface IUpdateCustomer {
   id: number;
@@ -8,19 +9,25 @@ interface IUpdateCustomer {
   email: string;
 }
 
+@injectable()
 export default class UpdateCustomerService {
+  constructor(
+    @inject("CustomersRepository")
+    private readonly customerRepository: ICustomersRepository
+  ) {}
+
   public async execute({
     id,
     name,
     email,
   }: IUpdateCustomer): Promise<Customer> {
-    const customer = await customerRepository.findbyId(id);
+    const customer = await this.customerRepository.findById(id);
 
     if (!customer) {
       throw new AppError("Customer not found.", 404);
     }
 
-    const customerExists = await customerRepository.findByEmail(email);
+    const customerExists = await this.customerRepository.findByEmail(email);
 
     if (customerExists && email !== customer.email) {
       throw new AppError("There is already a customer with this email.", 409);
@@ -29,7 +36,7 @@ export default class UpdateCustomerService {
     customer.name = name;
     customer.email = email;
 
-    await customerRepository.save(customer);
+    await this.customerRepository.save(customer);
 
     return customer;
   }

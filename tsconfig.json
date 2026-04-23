@@ -1,54 +1,36 @@
 {
-  // Visit https://aka.ms/tsconfig to read more about this file
   "compilerOptions": {
-    "ignoreDeprecations": "6.0",
-    // File Layout
     "rootDir": "src",
     "outDir": "build",
+    "baseUrl": "./src",
+    "ignoreDeprecations": "6.0",
 
-    // Environment Settings
-    // See also https://aka.ms/tsconfig/module
     "module": "commonjs",
     "target": "esnext",
     "types": ["node"],
     "lib": ["es2020", "dom"],
-    "baseUrl": "./",
+
     "paths": {
-      "@config/*": ["src/config/*"],
-      "@modules/*": ["src/modules/*"],
-      "@shared/*": ["src/shared/*"],
+      "@config/*": ["config/*"],
+      "@modules/*": ["modules/*"],
+      "@shared/*": ["shared/*"]
     },
+
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "typeRoots": [
       "node_modules/@types",
       "src/@types"
     ],
-    // For nodejs:
-    // "lib": ["esnext"],
-    // "types": ["node"],
-    // and npm install -D @types/node
 
-    // Other Outputs
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true,
 
-    // Stricter Typechecking Options
     "noUncheckedIndexedAccess": true,
     "exactOptionalPropertyTypes": false,
-    "strictPropertyInitialization":  false,
+    "strictPropertyInitialization": false,
 
-
-    // Style Options
-    // "noImplicitReturns": true,
-    // "noImplicitOverride": true,
-    // "noUnusedLocals": true,
-    // "noUnusedParameters": true,
-    // "noFallthroughCasesInSwitch": true,
-    // "noPropertyAccessFromIndexSignature": true,
-
-    // Recommended Options
     "strict": false,
     "jsx": "react-jsx",
     "verbatimModuleSyntax": false,
