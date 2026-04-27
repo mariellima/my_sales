@@ -10,7 +10,7 @@
     "migration:create": "cross-env MIGRATION_NAME=$npm_config_name ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:create src/shared/infra/typeorm/migrations/$npm_config_name",
     "migration:run": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:run -d ./src/shared/infra/typeorm/data-source.ts",
     "migration:revert": "ts-node -r tsconfig-paths/register ./node_modules/typeorm/cli.js migration:revert -d ./src/shared/infra/typeorm/data-source.ts",
-    "test": "jest"
+    "test": "jest --no-coverage"
   },
   "keywords": [],
   "author": "",
@@ -23,10 +23,12 @@
     "@types/jest": "^30.0.0",
     "@types/joi": "^17.2.2",
     "@types/jsonwebtoken": "^9.0.10",
+    "@types/mocha": "^10.0.10",
     "@types/multer": "^2.0.0",
     "@types/node": "^25.3.0",
     "@types/nodemailer": "^7.0.11",
     "@types/redis": "^4.0.10",
+    "@types/uuid": "^10.0.0",
     "@typescript-eslint/eslint-plugin": "^8.56.0",
     "@typescript-eslint/parser": "^8.56.0",
     "cross-env": "^10.1.0",
@@ -44,7 +46,7 @@
   "dependencies": {
     "@types/bcrypt": "^6.0.0",
     "bcrypt": "^6.0.0",
-    "celebrate": "^15.0.3",
+    "celebrate": "^12.1.2",
     "class-transformer": "^0.5.1",
     "cors": "^2.8.6",
     "date-fns": "^4.1.0",
@@ -61,6 +63,7 @@
     "redis": "^5.11.0",
     "reflect-metadata": "^0.2.2",
     "tsyringe": "^4.4.0",
-    "typeorm": "^0.3.28"
+    "typeorm": "^0.3.28",
+    "uuid": "^14.0.0"
   }
 }
